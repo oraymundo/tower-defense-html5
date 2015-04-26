@@ -1,8 +1,13 @@
 Tower Defense (HTML5)
 
+$ gem install compass
+$ sudo npm install bower -g
 $ sudo npm install gulp -g
 $ npm install
 $ bower install
-$ python -m SimpleHTTPServer 8080
+$ gulp js
+$ gulp compass
+$ gulp
 
-http://localhost:8080
+//check logs to see which port is used by the application
+//usually http://localhost:5123
