@@ -8,6 +8,6 @@ $ bower install
 $ gulp js
 $ gulp compass
 $ gulp
-$ python -m SimpleHTTPServer 8080
 
-http://localhost:8080
+//check logs to see which port is used by the application
+//usually http://localhost:5123
