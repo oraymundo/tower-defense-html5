@@ -8,7 +8,8 @@
         baddie.x = path[it].x * 20;
         baddie.y = path[it].y * 20;
         it++
-        if (it >= path.length - 1)
+
+        if (it>= path.length)
             it = 0;
 
 

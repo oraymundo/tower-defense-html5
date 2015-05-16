@@ -5,10 +5,10 @@ class BaseLevel {
         _private(this).easystar = new EasyStar.js();
         _private(this).TYPE_EMPTY = 0;
         _private(this).TYPE_WALL = 1;
-        _private(this).colSize = 20;
-        _private(this).rowSize = 20;
+        _private(this).colSize = 30;
+        _private(this).rowSize = 30;
         _private(this).numCols = 30;
-        _private(this).numRows = 30;
+        _private(this).numRows = 20;
 
         this.grid = [];
         this.bmd = App.Game.add.bitmapData(900, 900);
@@ -82,6 +82,7 @@ class BaseLevel {
                   type: _private(this).TYPE_EMPTY,
                   entity: null,
               });
+
             }
         }
     }
