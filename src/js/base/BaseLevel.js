@@ -1,5 +1,4 @@
 class BaseLevel {
-
     constructor(options) {
         createPrivateState(this);
 
@@ -18,8 +17,6 @@ class BaseLevel {
         App.Game.add.sprite(0, 0, this.bmd);
         App.level = {};
     }
-
-
     createGrid() {
         for (var y = 0; y < _private(this).numRows; y++) {
             this.grid.push([]);
@@ -85,15 +82,15 @@ class BaseLevel {
                   type: _private(this).TYPE_EMPTY,
                   entity: null,
               });
-             } 
-         }
-    }
 
+            }
+        }
+    }
     draw() {
         this.bmd.clear();
         var ctx = this.bmd.ctx;
         ctx.lineWidth = 1;
-        ctx.strokeStyle = 'white';//'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+        ctx.strokeStyle = 'white'; //'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
         ctx.fillStyle = 'white';
         for (var y = 0; y < this.grid.length; y++) {
             for (var x = 0; x < this.grid[y].length; x++) {
@@ -119,13 +116,13 @@ class BaseLevel {
         return pGrid;
     }
 
-   findPath(startX, startY, endX, endY) {
+    findPath(startX, startY, endX, endY) {
         _private(this).easystar.setGrid(this.prepForPathfinding());
 
         _private(this).easystar.setAcceptableTiles([0]);
         // _private(this).easystar.enableDiagonals();
 
-        _private(this).easystar.findPath(startX, startY, endX, endY, function (path) {
+        _private(this).easystar.findPath(startX, startY, endX, endY, function(path) {
             App.path = path;
         });
         _private(this).easystar.calculate();
