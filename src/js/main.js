@@ -1,5 +1,5 @@
 (function(preload, create, update) {
-    App.Game = new Phaser.Game(800, 600, Phaser.AUTO);
+    App.Game = new Phaser.Game(900, 600, Phaser.AUTO);
 
     var GameState = function() {
         this.preload = App.PreloadCtrl;

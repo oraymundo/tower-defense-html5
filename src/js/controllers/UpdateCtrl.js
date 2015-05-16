@@ -8,7 +8,7 @@
         baddie.x = path[it].x * 30;
         baddie.y = path[it].y * 30;
         it++
-        if (it>= path.length - 1)
+        if (it>= path.length)
             it = 0;
     });
 })(window.App);

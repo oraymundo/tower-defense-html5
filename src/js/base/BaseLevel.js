@@ -8,8 +8,8 @@ class BaseLevel {
         _private(this).TYPE_WALL = 1;
         _private(this).colSize = 30;
         _private(this).rowSize = 30;
-        _private(this).numCols = 40;
-        _private(this).numRows = 40;
+        _private(this).numCols = 30;
+        _private(this).numRows = 20;
 
         this.grid = [];
         this.bmd = App.Game.add.bitmapData(900, 900);
@@ -23,14 +23,70 @@ class BaseLevel {
     createGrid() {
         for (var y = 0; y < _private(this).numRows; y++) {
             this.grid.push([]);
+            //originalMap
+            // for (var x = 0; x < _private(this).numCols; x++) {
+            //     this.grid[y].push({
+            //         type: Math.random() < 0.9 ? _private(this).TYPE_EMPTY : _private(this).TYPE_WALL,
+            //         entity: null,
+            //     });
+            // }
 
-            for (var x = 0; x < _private(this).numCols; x++) {
+            //HardcodedMap
+
+            if (y == 0) {
                 this.grid[y].push({
-                    type: Math.random() < 0.9 ? _private(this).TYPE_EMPTY : _private(this).TYPE_WALL,
+                    type: _private(this).TYPE_EMPTY,
                     entity: null,
                 });
-            }
-        }
+                for (var x = 1; x < _private(this).numCols; x++) {
+                    this.grid[y].push({
+                        type: _private(this).TYPE_WALL,
+                        entity: null,
+                    });
+                }
+            } else if (y == 1) {
+                for (var x = 0; x < (_private(this).numCols - 1); x++) {
+                    this.grid[y].push({
+                        type: _private(this).TYPE_EMPTY,
+                        entity: null,
+                    });
+                }
+                this.grid[y].push({
+                    type: _private(this).TYPE_WALL,
+                    entity: null,
+                });
+            } else if (y > 1 && y < (_private(this).numRows - 1)) {
+                for (var x = 0; x < _private(this).numCols - 2; x++) {
+                    this.grid[y].push({
+                        type: _private(this).TYPE_WALL,
+                        entity: null,
+                    });
+                }
+                this.grid[y].push({
+                    type: _private(this).TYPE_EMPTY,
+                    entity: null,
+                });
+                this.grid[y].push({
+                    type: _private(this).TYPE_WALL,
+                    entity: null,
+                });
+            } else if (y == (_private(this).numRows - 1)) {
+              for (var x = 0; x < _private(this).numCols - 2; x++) {
+                  this.grid[y].push({
+                      type: _private(this).TYPE_WALL,
+                      entity: null,
+                  });
+              }
+              this.grid[y].push({
+                  type: _private(this).TYPE_EMPTY,
+                  entity: null,
+              });
+              this.grid[y].push({
+                  type: _private(this).TYPE_EMPTY,
+                  entity: null,
+              });
+             } 
+         }
     }
 
     draw() {
