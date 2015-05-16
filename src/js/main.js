@@ -8,6 +8,6 @@
     }
 
     App.Game.state.add('game', GameState, true);
-    App.Game.input.onDOwn.add(this.jump,this);
+    //App.Game.input.onDOwn.add(this.jump,this);
 
 })(App.preload, App.create, App.update);

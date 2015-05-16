@@ -5,14 +5,14 @@
         var path = App.path;
         var baddie = App.baddie;
 
-        baddie.x = path[it].x * 20;
-        baddie.y = path[it].y * 20;
+        baddie.x = path[it].x * 30;
+        baddie.y = path[it].y * 30;
         it++
 
         if (it>= path.length)
             it = 0;
 
-
+/*
         if (game.input.activePointer.isDown) {
             //  Boom!
             if (game.time.now > nextFire && bullets.countDead() > 0) {
@@ -23,6 +23,6 @@
             }
         }
 
-
+*/
     });
 })(window.App);
